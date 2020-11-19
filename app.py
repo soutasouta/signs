@@ -34,7 +34,8 @@ def post():
         return render_template("index.html", message="項目を入力してください")
     r_id = int(r_id)
 
-    result = timesum/(age+r_id) % 10   # 占いの結果を年齢と星座から求める
+    age = (age+r_id)
+    result = timesum/age % 10   # 占いの結果を年齢と星座から求める
 
     # filter_by()で条件に一致するものを検索する、Resultのid内で一致するものをtesに格納してる
     # tes = Result.query.filter_by(id=result).first()
