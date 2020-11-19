@@ -23,7 +23,7 @@ def get():
 @app.route("/", methods=["POST"])
 def post():
     now = datetime.datetime.today()  # 年～秒数まで取得する、呼び出すときは 変数名.year など
-    timesum = now.year*now.month*now.day  # 日付までを入力値として使う
+    timesum = now.year*now.month/now.day  # 日付までを入力値として使う
 
     age = request.form.get('age')  # ageという値をpostメソッド実行時にゲットする
     age = int(age)  # 受け取る値はstrなので計算ができるようintにキャスト
@@ -34,7 +34,7 @@ def post():
         return render_template("index.html", message="項目を入力してください")
     r_id = int(r_id)
 
-    result = (age+r_id*timesum) % 10   # 占いの結果を年齢と星座から求める
+    result = timesum/(age+r_id) % 10   # 占いの結果を年齢と星座から求める
 
     # filter_by()で条件に一致するものを検索する、Resultのid内で一致するものをtesに格納してる
     # tes = Result.query.filter_by(id=result).first()
