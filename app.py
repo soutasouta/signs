@@ -12,6 +12,8 @@ app = Flask(__name__)  # Flaskクラスのインスタンス生成
 # app.config.from_object('config.Config')
 # init_db(app)
 
+luck = ["大凶", "大吉", "中吉", "小吉", "吉", "末吉", "末小吉", "凶", "小凶", "末凶"]
+
 
 @app.route("/", methods=["GET"])
 def get():
@@ -32,13 +34,13 @@ def post():
         return render_template("index.html", message="項目を入力してください")
     r_id = int(r_id)
 
-    result = (age+r_id*timesum) % 10 + 10  # 占いの結果を年齢と星座から求める
+    result = (age+r_id*timesum) % 10   # 占いの結果を年齢と星座から求める
 
     # filter_by()で条件に一致するものを検索する、Resultのid内で一致するものをtesに格納してる
     # tes = Result.query.filter_by(id=result).first()
 
     # format()内の変数をmessageにある{}の中に挿入してる
-    return render_template("index.html", message='あなたの今日の運勢は', message2=[], message3='です')
+    return render_template("index.html", message='あなたの今日の運勢は', message2=luck[result], message3='です')
 
 
 if __name__ == '__main__':
