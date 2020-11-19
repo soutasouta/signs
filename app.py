@@ -1,15 +1,15 @@
 from flask import Flask, render_template, request
-from database import init_db
-import config
-import models.results
-from models.results import Result
-from sqlalchemy.sql import text
+# from database import init_db
+# import config
+# import models.results
+# from models.results import Result
+# from sqlalchemy.sql import text
 import datetime
 
 app = Flask(__name__)  # Flaskクラスのインスタンス生成
 
-app.config.from_object('config.Config')
-init_db(app)
+# app.config.from_object('config.Config')
+# init_db(app)
 
 
 @app.route("/", methods=["GET"])
@@ -34,10 +34,10 @@ def post():
     result = (age+r_id*timesum) % 10 + 10  # 占いの結果を年齢と星座から求める
 
     # filter_by()で条件に一致するものを検索する、Resultのid内で一致するものをtesに格納してる
-    tes = Result.query.filter_by(id=result).first()
+    # tes = Result.query.filter_by(id=result).first()
 
     # format()内の変数をmessageにある{}の中に挿入してる
-    return render_template("index.html", message='あなたの今日の運勢は', message2=tes.f_result, message3='です')
+    return render_template("index.html", message='あなたの今日の運勢は', message2=[], message3='です')
 
 
 if __name__ == '__main__':
