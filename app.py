@@ -23,7 +23,7 @@ def get():
 @app.route("/", methods=["POST"])
 def post():
     now = datetime.datetime.today()  # 年～秒数まで取得する、呼び出すときは 変数名.year など
-    timesum = now.year+now.month+now.day  # 日付までを入力値として使う
+    timesum = now.year*now.month*now.day  # 日付までを入力値として使う
 
     age = request.form.get('age')  # ageという値をpostメソッド実行時にゲットする
     age = int(age)  # 受け取る値はstrなので計算ができるようintにキャスト
