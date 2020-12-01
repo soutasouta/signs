@@ -37,14 +37,27 @@ def post():
     age = (age+r_id)
     result = timesum/age % 10   # 占いの結果を年齢と星座から求める
     result = int(result)
+# ------------
+    return if_test(result)
 
+
+def if_test(result):
+    if result < 1:  # 大凶
+        return render_template("index.html", message='あなたの今日の運勢は', message5=luck[result], message3='です')
+    elif result < 2:  # 大吉
+        return render_template("index.html", message='あなたの今日の運勢は', message6=luck[result], message3='です')
+    elif result > 6:  # 凶、小凶、末凶
+        return render_template("index.html", message='あなたの今日の運勢は', message8=luck[result], message3='です')
+    else:  # その他
+        return render_template("index.html", message='あなたの今日の運勢は', message7=luck[result], message3='です')
+# ------------
     # filter_by()で条件に一致するものを検索する、Resultのid内で一致するものをtesに格納してる
     # tes = Result.query.filter_by(id=result).first()
 
     # format()内の変数をmessageにある{}の中に挿入してる
-    return render_template("index.html", message='あなたの今日の運勢は', message2=luck[result], message3='です')
+    # return render_template("index.html", message='あなたの今日の運勢は', message2=luck[result], message3='です')
 
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='localhost', port=port)

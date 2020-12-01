@@ -6,11 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="static\style\style.css"
-    />
+    <link rel="stylesheet" type="text/css" href="static\style\style.css" />
     <title>星座占い</title>
   </head>
   <body>
@@ -18,22 +14,31 @@
     <h1>星座占い</h1>
     <li>年齢と星座を選んでね❕</li>
 
-  <div class="box">
-    {{message}}<span class="Result"> {{message2}}<span></span></span>{{message3}}
-  </div>
-
-
-
-
+    <div class="box">
+      {{message}}
+      <span class="daikiti">{{message6}}</span>
+      <span class="hoka">{{message7}}</span>
+      <span class="daikyou">{{message5}}</span>
+      <span class="kyou">{{message8}}</span>
+      <span>{{message3}}</span>
+    </div>
     <form action="/" method="POST" enctype="multipart/form-data">
       <label>年齢：</label>
-      <input type="number" name="age" value="0" class="name" min="0" max="117" />
+      <input
+        type="number"
+        name="age"
+        value="0"
+        class="name"
+        min="0"
+        max="117"
+      />
       <label>歳</label>
 
       <div></div>
       <label>星座：</label>
       <select name="sel">
-        <option value="" disabled selected>Zodiac Signs</option><!--value=""がないと表示されない-->
+        <option value="" disabled selected>Zodiac Signs</option>
+        <!--value=""がないと表示されない-->
         <option value="1">おひつじ座</option>
         <option value="2">おうし座</option>
         <option value="3">ふたご座</option>
@@ -48,10 +53,8 @@
         <option value="12">うお座</option>
       </select>
       <div>
-        <input type="submit" href="" class="btn02" value="うらなう">
+        <input type="submit" href="" class="btn02" value="うらなう" />
       </div>
     </form>
-    
-    
   </body>
 </html>

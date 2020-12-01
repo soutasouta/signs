@@ -1,129 +1,235 @@
+@import "compass/css3";
+
 body {
+  /*背景*/
   background-image: url("https://2.bp.blogspot.com/-KNGACDz9A5w/WhUiqsXyH0I/AAAAAAABIUo/-Jwae5w978wda6KO6yeXztLAB5wGqLY6gCLcBGAs/w1200-h630-p-k-no-nu/uranai_suisyou.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-h1:first-letter {
-  font-size: 90px;
-  color: #fbff00;
-  text-shadow: 2px 2px 10px #777, -2px 2px 10px #777, 2px -2px 10px #777,
-    -2px -2px 10px #777;
-}
-.Result {
-  font-size: 60px;
-}
-.box {
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-  height: 170px;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 50px;
-}
-
 .name {
-  width: 170px;
-  height: 60px;
-  border: 5px;
-  font-size: 40px;
-}
-form {
-  text-align: center;
-  font-size: 50px;
+  /*年齢欄*/
+  width: 10.625rem;
+  height: 3.75rem;
+  border: 0.3125rem;
+  font-size: 2.5rem;
 }
 select {
+  /*星座選択欄*/
   text-align: center;
+  height: 3.75rem;
+  font-size: 2.5rem;
+  border: 0.3125rem;
+  width: 16.25rem;
 }
-li {
+form {
+  /*フォーム全体*/
   text-align: center;
-  list-style: none;
-}
-a {
-  text-align: center;
+  font-size: 3.125rem;
+  box-sizing: border-box;
 }
 
-label {
+li {
+  /*年齢と星座を選んでね❕*/
+  text-align: center;
+  list-style: none;
   color: rgb(0, 0, 0);
-  height: 170px;
+  margin-top: 3.125rem;
+
+  font-size: 3.125rem;
+}
+
+/*a {
+  text-align: center;
+}*/
+
+label {
+  /*星座：*/
+  color: rgb(0, 0, 0);
+  height: 10.625rem;
   vertical-align: middle;
   font-size: 5rem;
 }
-li {
-  color: rgb(0, 0, 0);
-  height: 170px;
-  vertical-align: middle;
-  font-size: 50px;
+
+h1:first-letter {
+  /*星座占い　の一文字目 */
+  border-radius: 0.1875rem;
+  color: #fff;
+  font-size: 6.25rem;
+  height: 5.9375rem;
+  letter-spacing: 0.125rem;
+  margin: 0 auto;
+  padding: 0.625rem;
+  text-shadow: 0 0 30px #ffc800, 0 0 20px #ffe449, 0 0 10px rgb(248, 244, 24);
+  width: 15.625rem;
 }
 h1 {
+  /*星座占い*/
+  margin: 0%;
   text-align: center;
-  font-size: 80px;
-}
-h1 {
-  vertical-align: middle;
+  font-size: 5rem;
   font-weight: bold;
 }
-form {
-  box-sizing: border-box;
-}
-select {
-  height: 60px;
-  font-size: 40px;
-  border: 5px;
-  width: 260px;
-}
+
 input {
-  height: 100px;
-  font-size: 40px;
+  /*送信ボタン*/
+  height: 6.25rem;
+  font-size: 2.5rem;
+  border-radius: 0.625rem;
 }
 .btn02 {
+  /*送信ボタン*/
   display: inline-block;
-  padding: 16px 32px;
+  padding: 1rem 2rem;
   background: #e41313;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   color: #ffffff;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   -webkit-box-shadow: 0px 6px 3px -3px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 6px 3px -3px rgba(0, 0, 0, 0.4);
   -webkit-transition: 0.12s;
   transition: 0.12s;
+  border-radius: 0.625rem;
 }
 .btn02:hover {
+  /*送信ボタン*/
   background: #ffffff;
   border: solid 2px #bd1111;
   color: #e41313;
   opacity: 0.8;
+  border-radius: 0.625rem;
+}
+.box {
+  /*結果全体*/
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4.375rem;
+  margin-top: 5rem;
+}
+.hoka {
+  /*他*/
+  font-size: 5rem;
+  line-height: 0.1em;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+
+  text-shadow: 0 0 0.1em #2962ff, 0 0 0.15em #2962ff, 0 0 0.8em #2962ff,
+    0 0 1em #2962ff;
 }
 
-.Result {
+.daikyou {
+  /*大凶*/
+  font-size: 6.25rem;
+
+  line-height: 0.1em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+
+  text-shadow: 0 0 0.1em #ff0000a6, 0 0 0.15em #6b0000, 0 0 0.8em #500000,
+    0 0 1em #460000;
   display: inline-block;
-  position: relative;
+  animation: hurueru 0.4s infinite;
 }
-.Result span {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(
-    transparent 80%,
-    RED 60%
-  ); /* ラインマーカーを付ける  */
-  animation: ResultAnime 3s ease-in infinite; /* アニメ */
+
+.daikiti {
+  /*大吉*/
+  line-height: 0.1em;
+  font-weight: bold;
+  -webkit-text-stroke: 0.2px rgb(41, 38, 38);
+  -webkit-animation: scrollmask 30s infinite;
+  -webkit-background-clip: text;
+  background-image: url(https://t.pimg.jp/002/054/682/1/2054682.jpg);
+  color: transparent;
+  font-size: 6.25rem;
 }
-/* --- アニメーションの設定 ------------------------------------ */
-@keyframes ResultAnime {
+.kyou {
+  font-size: 5rem;
+  text-align: center;
+  line-height: 0.95em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 0.1em #2e0077, 0 0 0.15em #000000, 0 0 0.8em #2e0077,
+    0 0 3em #33006e75;
+}
+/*------------------------------アニメーション--------------------------------*/
+
+@-webkit-keyframes scrollmask {
   0% {
-    right: 100%;
-  } /* 点滅開始色        */
-  25% {
-    right: 0;
-  } /* 点滅終了色        */
+    background-position: 0 0;
+  }
   100% {
-    right: 0;
-  } /* 点滅終了色        */
+    background-position: 100% 0;
+  }
+}
+@keyframes hurueru {
+  0% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+  }
+  5% {
+    transform: translate(2px, 2px) rotateZ(1deg);
+  }
+  10% {
+    transform: translate(0px, 2px) rotateZ(0deg);
+  }
+  15% {
+    transform: translate(2px, 0px) rotateZ(-1deg);
+  }
+  20% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+  }
+  25% {
+    transform: translate(2px, 2px) rotateZ(1deg);
+  }
+  30% {
+    transform: translate(0px, 2px) rotateZ(0deg);
+  }
+  35% {
+    transform: translate(2px, 0px) rotateZ(-1deg);
+  }
+
+  40% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+  }
+  45% {
+    transform: translate(2px, 2px) rotateZ(1deg);
+  }
+  50% {
+    transform: translate(0px, 2px) rotateZ(0deg);
+  }
+  55% {
+    transform: translate(2px, 0px) rotateZ(-1deg);
+  }
+  60% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+  }
+  70% {
+    transform: translate(2px, 2px) rotateZ(1deg);
+  }
+  75% {
+    transform: translate(0px, 2px) rotateZ(0deg);
+  }
+  80% {
+    transform: translate(2px, 0px) rotateZ(-1deg);
+  }
+  85% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+  }
+  86% {
+    transform: skewX(40deg);
+  }
+  90% {
+    transform: translate(2px, 2px) rotateZ(1deg);
+  }
+  91% {
+    transform: skewX(-40deg);
+  }
+  95% {
+    opacity: 1;
+    transform: translate(0px, 2px) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(2px, 0px) rotateZ(-1deg);
+  }
 }
